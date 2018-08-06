@@ -28,6 +28,6 @@ collections:
     folder: src/people
     create: true
     fields:
-      - { name: title, label: Title }
-      - { name: description, label: Description, widget: markdown }
-      - { name: points, label: Points }
+      - { name: title, label: Name }
+      - { name: age, label: Age }
+      - { name: task1, label: Task 1, widget: relation, collection: task, searchFields: [title], valueField: title, displayFields: [title, points], required: false }
