@@ -31,4 +31,4 @@ collections:
       - { name: name, label: Name }
       - { name: age, label: Age }
       - { name: image, label: Image, widget: image }
-      - { name: task, label: Task, widget: relation, collection: task, searchFields: [name], valueField: name, displayFields: [name, description, points]}
+      - { name: task, label: Task, widget: relation, collection: task, searchFields: [title], valueField: name, displayFields: [title, description, points]}
