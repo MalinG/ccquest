@@ -1,7 +1,8 @@
 backend:
-  name: test-repo
+  name: github
+  repo: MalinG/ccquest
 
-media_folder: static/images
+media_folder: static/assets
 
 collections:
   - name: post
