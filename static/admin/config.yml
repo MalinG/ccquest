@@ -15,3 +15,20 @@ collections:
       - { name: date, label: Create At, widget: date }
       - { name: body, label: Post, widget: markdown }
       - { name: image, label: Image, widget: image }
+  - name: task
+    label: Tasks
+    folder: src/tasks
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description, widget: markdown }
+      - { name: points, label: Points }
+  - name: people
+    label: People
+    folder: src/people
+    create: true
+    fields:
+      - { name: name, label: Name }
+      - { name: age, label: Age }
+      - { name: image, label: Image, widget: image }
+      - { name: task, label: Task, widget: relation, collection: task, searchFields: [name], valueField: name, displayFields: [name, description, points]}
