@@ -1,0 +1,12 @@
+backend:
+  name: test-repo
+
+media_folder: static/images
+
+collections:
+  - name: post
+    label: Posts
+    folder: src/posts
+    create: true
+    fields:
+      - { name: title, label: Title }
