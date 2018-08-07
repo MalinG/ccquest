@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => {
     <div>
     <h2>Warriors</h2>
     {data.allMarkdownRemark.edges.map(({ node }) => (
-      <PeopleListing item={node} />
+      <PeopleListing key={node.id} item={node} />
     ))}
   </div>
   )
@@ -37,6 +37,10 @@ export const query = graphql`
           id
           frontmatter {
             title
+            image
+          }
+          fields {
+            slug
           }
         }
       }

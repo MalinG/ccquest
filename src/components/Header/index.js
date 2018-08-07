@@ -12,7 +12,7 @@ const HeaderWrapper = styled.div`
   display: flex;
   overflow: hidden;
   position: relative;
-  height: ${({ isHome }) => (isHome ? "50vh" : "20vh")};
+  height: ${({ isHome }) => (isHome ? "50vh" : "30vh")};
 `;
 
 const HeaderContainer = styled.div`
@@ -27,9 +27,12 @@ const HeaderContainer = styled.div`
 
 const SiteTitle = styled.h1`
   color: white;
-  font-size: 3.5rem;
-  line-height: 100px;
+  font-size: 2.5rem;
   margin: 0 20px;
+
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+  }
 `;
 
 export default class Header extends Component {

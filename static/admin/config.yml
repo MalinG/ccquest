@@ -21,7 +21,6 @@ collections:
     create: true
     fields:
       - { name: title, label: Title }
-      - { name: description, label: Description, widget: markdown }
       - { name: points, label: Points }
   - name: people
     label: People
@@ -31,8 +30,4 @@ collections:
       - { name: title, label: Name }
       - { name: age, label: Age }
       - { name: image, label: Image, widget: image }
-      - { name: task1, label: Task 1, widget: relation, collection: task, searchFields: [title], valueField: title, displayFields: [title, points], required: false }
-      - { name: task2, label: Task 2, widget: relation, collection: task, searchFields: [title], valueField: title, displayFields: [title, points], required: false }
-      - { name: task3, label: Task 3, widget: relation, collection: task, searchFields: [title], valueField: title, displayFields: [title, points], required: false }
-      - { name: task4, label: Task 4, widget: relation, collection: task, searchFields: [title], valueField: title, displayFields: [title, points], required: false }
-      - { name: task5, label: Task 5, widget: relation, collection: task, searchFields: [title], valueField: title, displayFields: [title, points], required: false }
+      - { label: Testimonials, name: testimonials, widget: list, fields: [{label: Task, name: task, widget: string}, {label: Points, name: points, widget: string}] }
