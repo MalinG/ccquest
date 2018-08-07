@@ -30,4 +30,4 @@ collections:
       - { name: title, label: Name }
       - { name: age, label: Age }
       - { name: image, label: Image, widget: image }
-      - { label: Testimonials, name: testimonials, widget: list, fields: [{label: Task, name: task, widget: string}, {label: Points, name: points, widget: string}] }
+      - { label: Tasks, name: tasks, widget: list, fields: [{label: Task, name: task, widget: string}, {label: Points, name: points, widget: string}] }
