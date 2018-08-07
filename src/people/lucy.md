@@ -2,10 +2,10 @@
 title: Lucy Cakeslayer
 age: '5'
 image: /assets/img_5193.jpg
-testimonials:
-  - points: '5'
-    task: Bädda sängen
-  - points: '2'
-    task: Borsta tänderna
+tasks:
+  - points: '20'
+    task: Städa rummet
+  - points: '1'
+    task: Ta på pyjamas
 ---
 
