@@ -1,6 +1,6 @@
 ---
 title: test
-description: test
-points: '3'
+age: '12'
+task1: Test
 ---
 
