@@ -1,12 +1,19 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const PeoplePage = ({ data }) => (
-  <div>
-    <h1>{data.markdownRemark.frontmatter.title}</h1>
-    <Link to="/">Go back to the homepage</Link>
-  </div>
-)
+import TaskListing from '../components/TaskListing'
+
+const PeoplePage = ({ data }) => {
+  const { frontmatter } = data.markdownRemark
+  return (
+    <div>
+      <h1>{frontmatter.title}</h1>
+      {frontmatter.tasks.map((item) =>
+        <TaskListing item={item} />
+      )}
+    </div>
+  )
+}
 
 export default PeoplePage
 
@@ -16,6 +23,10 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        tasks {
+          points
+          task
+        }
       }
     }
   }
