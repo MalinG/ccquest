@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 // import Link from 'gatsby-link'
 import styled from 'styled-components'
 import { ReactComponent as Cupcake } from '../../images/cupcake-purple.svg'
+import Confetti from 'react-dom-confetti';
 
 const Item = styled.div`
   display: flex;
@@ -11,6 +12,8 @@ const Item = styled.div`
   margin: 20px 0;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  opacity: ${(props) => props.disabled ? '0.4' : '1'};
 `
 
 const Title = styled.h3`
@@ -27,20 +30,40 @@ const Points = styled.div`
   display: flex;
   align-items: center;
 `
+const config = {
+  angle: 80,
+  spread: 208,
+  startVelocity: 27,
+  elementCount: 78,
+  decay: 0.86
+};
 
-const TaskListing = ({ item }) => {
+class TaskListing extends React.Component {
+  state = {
+    disabled: false
+  }
 
-  return (
-    <Item>
-        <Title>
-            {item.task}
-        </Title>
-        <Points>
-          {item.points}
-          <StyledCupcake />
-        </Points>
-    </Item>
-  )
+  onClick = () => {
+    this.setState({
+      disabled: true
+    })
+  }
+
+  render () {
+    const { item, onItemClick } = this.props
+    return (
+      <Item big={this.state.disabled} onClick={this.onClick}>
+          <Title >
+              {item.task}
+          </Title>
+          <Points>
+            {item.points}
+            <StyledCupcake />
+          </Points>
+          <Confetti active={this.state.disabled} config={config} />
+      </Item>
+    )
+  }
 }
 
 export default TaskListing
