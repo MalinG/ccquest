@@ -17,7 +17,7 @@ class PeoplePage extends React.Component {
     return (
       <div>
         <h1>{frontmatter.title}</h1>
-        {(frontmatter.tasks.length > 0) && frontmatter.tasks.map((item, index) =>
+        {frontmatter.tasks && frontmatter.tasks.map((item, index) =>
           <TaskListing key={index} item={item} onItemClick={this.onItemClick} />
         )}
       </div>

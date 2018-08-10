@@ -13,7 +13,7 @@ const Item = styled.div`
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  opacity: ${(props) => props.disabled ? '0.4' : '1'};
+  opacity: ${(props) => props.disabled ? '0.3' : '1'};
 `
 
 const Title = styled.h3`
@@ -52,7 +52,7 @@ class TaskListing extends React.Component {
   render () {
     const { item, onItemClick } = this.props
     return (
-      <Item big={this.state.disabled} onClick={this.onClick}>
+      <Item disabled={this.state.disabled} onClick={this.onClick}>
           <Title >
               {item.task}
           </Title>
