@@ -33,6 +33,9 @@ module.exports = {
         excerpt_separator: `<!-- end -->`
       }
     },
+    {
+      resolve: 'gatsby-plugin-svgr'
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-netlify-cms"

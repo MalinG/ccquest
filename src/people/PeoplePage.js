@@ -8,8 +8,8 @@ const PeoplePage = ({ data }) => {
   return (
     <div>
       <h1>{frontmatter.title}</h1>
-      {frontmatter.tasks.map((item) =>
-        <TaskListing item={item} />
+      {(frontmatter.tasks.length > 0) && frontmatter.tasks.map((item, index) =>
+        <TaskListing key={index} item={item} />
       )}
     </div>
   )
