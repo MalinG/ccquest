@@ -12,7 +12,7 @@ const HeaderWrapper = styled.div`
   display: flex;
   overflow: hidden;
   position: relative;
-  height: ${({ isHome }) => (isHome ? "50vh" : "30vh")};
+  height: ${({ isHome }) => (isHome ? "70vh" : "45vh")};
 `;
 
 const HeaderContainer = styled.div`
@@ -23,6 +23,7 @@ const HeaderContainer = styled.div`
   z-index: 2;
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 const SiteTitle = styled.h1`

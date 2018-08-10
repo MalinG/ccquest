@@ -9,11 +9,22 @@ const StyledCupcake = styled(Cupcake)`
   fill: #A800FF;
   margin-left: 5px;
 `
+const ContentHeader = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 const Counter = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  flex:1;
+  justify-self: flex-end;
+  margin-bottom: 1.45rem;
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
 `
 
 class PeoplePage extends React.Component {
@@ -31,14 +42,16 @@ class PeoplePage extends React.Component {
     const { frontmatter } = this.props.data.markdownRemark
     return (
       <div>
-        <h1>{frontmatter.title}</h1>
+        <ContentHeader>
+          <h1>{frontmatter.title}</h1>
+          <Counter>
+            <h2>{this.state.count}</h2>
+            <StyledCupcake />
+          </Counter>
+        </ContentHeader>
         {frontmatter.tasks && frontmatter.tasks.map((item, index) =>
           <TaskListing key={index} item={item} onItemClick={this.onItemClick} />
         )}
-        <Counter>
-          <StyledCupcake />
-          <h2>{this.state.count}</h2>
-        </Counter>
       </div>
     )
   }
