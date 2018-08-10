@@ -3,13 +3,13 @@ import TaskListing from '../components/TaskListing'
 
 class PeoplePage extends React.Component {
   state = {
-    active: false
+    count : 0
   }
-
-  onItemClick = () => {
-    console.log('Item clicked');
+  onItemClick = (points) => {
+    console.log('Item clicked: ', points);
+    const {count} = this.state;
     this.setState({
-      active: !this.state.active
+      count: parseInt(count) + parseInt(points)
     })
   }
   render () {
@@ -20,6 +20,7 @@ class PeoplePage extends React.Component {
         {frontmatter.tasks && frontmatter.tasks.map((item, index) =>
           <TaskListing key={index} item={item} onItemClick={this.onItemClick} />
         )}
+        <h2>{this.state.count}</h2>
       </div>
     )
   }
