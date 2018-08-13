@@ -12,7 +12,7 @@ const HeaderWrapper = styled.div`
   display: flex;
   overflow: hidden;
   position: relative;
-  height: ${({ isHome }) => (isHome ? "70vh" : "45vh")};
+  height: ${({ isHome }) => (isHome ? "65vh" : "45vh")};
 `;
 
 const HeaderContainer = styled.div`

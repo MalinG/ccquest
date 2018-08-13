@@ -9,16 +9,16 @@ const Item = styled.div`
   position: relative;
   padding: 24px;
   border-radius: 5px;
-  background: #f5f5f5;
+  background: ${(props) => props.disabled ? '#fbfbfb' : '#f5f5f5'};
   margin: 20px 0;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  opacity: ${(props) => props.disabled ? '0.3' : '1'};
 `
 
 const Title = styled.h3`
   margin: 0;
+  opacity: ${(props) => props.disabled ? '0.3' : '1'};
 `
 
 const StyledCupcake = styled(Cupcake)`
@@ -30,6 +30,7 @@ const StyledCupcake = styled(Cupcake)`
 const Points = styled.div`
   display: flex;
   align-items: center;
+  opacity: ${(props) => props.disabled ? '0.3' : '1'};
 `
 
 const ConfettiWrapper = styled.div`
@@ -65,10 +66,10 @@ class TaskListing extends React.Component {
     const { item } = this.props
     return (
       <Item disabled={this.state.disabled} onClick={this.onClick}>
-          <Title >
+          <Title disabled={this.state.disabled}>
               {item.task}
           </Title>
-          <Points>
+          <Points disabled={this.state.disabled}>
             {item.points}
             <StyledCupcake />
           </Points>
